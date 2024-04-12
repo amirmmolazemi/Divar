@@ -1,4 +1,4 @@
-import AuthPages from "./pages/AuthPages";
+import AuthPages from "pages/AuthPages";
 
 function App() {
   return (

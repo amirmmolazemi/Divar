@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
-import { checkOtp } from "../../services/auth.js";
-import { setCookie } from "../../utils/cookie.js";
+import { checkOtp } from "services/auth.js";
+import { setCookie } from "utils/cookie.js";
 import styles from "./CheckOtpForm.module.css";
 
 function CheckOtpForm({ code, setCode, mobile, setStep }) {

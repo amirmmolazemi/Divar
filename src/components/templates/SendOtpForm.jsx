@@ -1,7 +1,8 @@
-import { sendOtp } from "../../services/auth.js";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { sendOtp } from "services/auth.js";
+
 import styles from "./SendOtpForm.module.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function SendOtpForm({ mobile, setMobile, setStep }) {
   const submitHandler = async (event) => {
