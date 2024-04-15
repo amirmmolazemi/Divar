@@ -1,4 +1,4 @@
-export default paths = [
+const paths = [
   "src",
   "assets",
   "components",
@@ -8,4 +8,7 @@ export default paths = [
   "services",
   "styles",
   "utils",
+  "constants",
 ];
+
+export default paths;
