@@ -1,9 +1,17 @@
-import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+
 import { checkOtp } from "services/auth.js";
 import { setCookie } from "utils/cookie.js";
+import { getProfile } from "services/user";
+
+import { toast } from "react-toastify";
 import styles from "./CheckOtpForm.module.css";
 
 function CheckOtpForm({ code, setCode, mobile, setStep }) {
+  const navigate = useNavigate();
+  const { refetch } = useQuery(["profile"], getProfile);
+
   const submitHandler = async (event) => {
     event.preventDefault();
 
@@ -19,6 +27,8 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
       });
     if (response) {
       setCookie(response.data);
+      navigate("/");
+      refetch()
     }
   };
 
